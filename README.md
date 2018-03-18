@@ -62,6 +62,25 @@ See [Development links on Wekan
 wiki](https://github.com/wekan/wekan/wiki#Development)
 bottom of the page for more info.
 
+##start server
+Build tarball
+creae pm2.json inside build folder... 
+{
+  "apps" : [{
+    "name": "weekan",
+    "max_memory_restart": "1024M",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss",
+    "script": "main.js",
+    "out_file": "app.log",
+    "error_file": "err.log",
+    "env": {
+    "MONGO_URL": "mongodb://user:pass@db:port",
+    "ROOT_URL": "webpath",
+    "MAIL_URL": "smtp://user:password@smtp:port"
+    }
+  }]
+}
+
 ## Demo
 
 [Wekan demo][roadmap_wefork]
